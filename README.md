@@ -1,3 +1,3 @@
 # GlideScope
 
-GlideScope ITS
+GlideScope
