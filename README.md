@@ -1,3 +1,3 @@
 # GlideScope
 
-GlideScope
+GlideScope Project
