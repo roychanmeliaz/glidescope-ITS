@@ -12,7 +12,9 @@ app.on('window-all-closed', function() {
 // initialization and ready for creating browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences: {nodeIntegration: true}});
+  mainWindow = new BrowserWindow({frame:false, width: 800, height: 600, webPreferences: {nodeIntegration: true}});
+  mainWindow.setMenu(null);
+  mainWindow.setFullScreen(true);
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html');

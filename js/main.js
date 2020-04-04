@@ -1,5 +1,7 @@
 'use strict';
 
+let rel_vid_url_sekarang;
+
 /* globals MediaRecorder */
 
 const mediaSource = new MediaSource();
@@ -103,15 +105,17 @@ function handleSuccess(stream) {
 }
 
 function ganti(filename) {
+  rel_vid_url_sekarang = filename;
   var vid = document.getElementById("playback");
   vid.src = filename;
   vid.style.display="block";
   document.querySelector("#playback").play();
   ul.innerHTML="";
+  hapusVideo.style.display="block";
 }
 
 let ul = document.createElement('ul');
-let recList = document.getElementById('recList');
+let hapusVideo = document.getElementById('hapusvideo');
 recList.appendChild(ul);
 function bacaFile() {
   var vid = document.getElementById("playback");
@@ -120,19 +124,20 @@ function bacaFile() {
   const { readdirSync } = require('fs');
   var PATH = "recordings/";
   var listRec = readdirSync(PATH);
-  recList.display="none";
   $("#playback").get(0).pause();
+  hapusVideo.style.display="none";
 
   ul.innerHTML="";
-  listRec.forEach(function (item) {
+  listRec.forEach(function (namafile) {
     let li = document.createElement('li');
     ul.appendChild(li);
-    li.innerHTML += item;
-    li.onclick = function(){ganti(PATH+item)}
+    li.innerHTML += namafile;
+    li.onclick = function(){ganti(PATH+namafile)}
   });			
 }
 
 async function init() {
+
   //playback
   var vid = document.getElementById("playback");
   vid.src = "recordings/rec0304202021012.webm"; 
@@ -175,4 +180,25 @@ function openTab(evt, tabName) {
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+}
+
+function hapusVideoIni() {
+  var vid = document.getElementById("playback");
+  vid.style.display="none";
+  console.log(rel_vid_url_sekarang)
+  hapusFile(rel_vid_url_sekarang);
+}
+
+function hapusFile(namafile) {
+  const fs = require('fs')
+
+  const path = namafile;
+
+  try {
+    fs.unlinkSync(path);
+    //file removed
+    bacaFile();
+  } catch(err) {
+    console.error(err);
+  }
 }
