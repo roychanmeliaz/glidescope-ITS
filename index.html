@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base target="_blank">
+
+	<title>GlideScope ITS</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+</head>
+
+<body>
+<!-- include adapter for srcObject shim -->
+<script src="js/adapter-latest.js"></script>
+<script src="js/main.js" async></script>
+
+<div id="container">
+
+
+	<!-- Tab links -->
+	<div class="tab">
+		<button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Camera')">Camera</button>
+		<button class="tablinks" onclick="openTab(event, 'Recording'); bacaFile();">Recording</button>
+	</div>
+	
+	<!-- Tab content -->
+	<div id="Camera" class="tabcontent">
+		<video id="gum" playsinline autoplay muted></video>
+		<div>
+			<button id="record" disabled>Start Recording</button>
+		</div>
+	</div>
+	
+	<div id="Recording" class="tabcontent">
+		<video id="playback" controls></video>
+		<ul id="recList">
+
+		</ul>
+	</div>
+	<div>
+		<span id="errorMsg"></span>
+	</div>
+</div>
+
+
+
+
+
+</body>
+</html>
