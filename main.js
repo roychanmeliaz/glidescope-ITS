@@ -12,7 +12,7 @@ app.on('window-all-closed', function() {
 // initialization and ready for creating browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({frame:false, width: 800, height: 540, webPreferences: {nodeIntegration: true, webSecurity: false}});
+  mainWindow = new BrowserWindow({frame:false, width: 800, height: 480, webPreferences: {nodeIntegration: true, webSecurity: false}});
   // mainWindow.setMenu(null);
   // mainWindow.setFullScreen(true);
 
