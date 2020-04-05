@@ -12,9 +12,9 @@ app.on('window-all-closed', function() {
 // initialization and ready for creating browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({frame:false, width: 800, height: 600, webPreferences: {nodeIntegration: true}});
-  mainWindow.setMenu(null);
-  mainWindow.setFullScreen(true);
+  mainWindow = new BrowserWindow({frame:false, width: 800, height: 540, webPreferences: {nodeIntegration: true, webSecurity: false}});
+  // mainWindow.setMenu(null);
+  // mainWindow.setFullScreen(true);
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html');
@@ -37,7 +37,9 @@ app.on('ready', function() {
                     + currentdate.getMinutes()
                     + currentdate.getSeconds()
                     + ".webm";
-    item.setSavePath("recordings/"+filename)
+    console.log(app.getAppPath())
+    console.log(app.getAppPath()+"/recordings/"+filename)
+    item.setSavePath(app.getAppPath()+"/recordings/"+filename)
     console.log("Will download triggered")
   
     item.on('updated', (event, state) => {

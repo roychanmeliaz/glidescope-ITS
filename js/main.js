@@ -107,7 +107,9 @@ function handleSuccess(stream) {
 function ganti(filename) {
   rel_vid_url_sekarang = filename;
   var vid = document.getElementById("playback");
+  // vid.src = "recordings/rec05042020163636.webm";
   vid.src = filename;
+  
   vid.style.display="block";
   document.querySelector("#playback").play();
   ul.innerHTML="";
@@ -118,11 +120,12 @@ let ul = document.createElement('ul');
 let hapusVideo = document.getElementById('hapusvideo');
 recList.appendChild(ul);
 function bacaFile() {
+  hapusVideo.style.display="none";
   var vid = document.getElementById("playback");
   vid.style.display="none";
   //baca folder
   const { readdirSync } = require('fs');
-  var PATH = "recordings/";
+  var PATH =  require('electron').remote.app.getAppPath()+"/recordings/";
   var listRec = readdirSync(PATH);
   $("#playback").get(0).pause();
   hapusVideo.style.display="none";
@@ -137,19 +140,18 @@ function bacaFile() {
 }
 
 async function init() {
+  console.log(require('electron').remote.app.getAppPath());
 
   //playback
   var vid = document.getElementById("playback");
-  vid.src = "recordings/rec0304202021012.webm"; 
   vid.style.display="none";
 
 
   const constraints = {
-    audio: {
-      echoCancellation: false
-    },
+    audio: false,
     video: {
-      width: 1280, height: 900
+      width: 1280, height: 720
+      // width: 320, height: 240
     }
   };
   try {
