@@ -1,3 +1,7 @@
+//build
+// electron-packager . GlideScope-ITS --electron-version 8.2.0
+// electron-packager . GlideScope-ITS --electron-version 8.2.0 --arch armv7l --platform linux
+// electron-packager . GlideScope-ITS --electron-version 8.2.0 --arch arm64 --platform linux
 const {app, BrowserWindow} = require('electron');
 
 let mainWindow;
@@ -13,7 +17,7 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({frame:false, width: 800, height: 480, webPreferences: {nodeIntegration: true, webSecurity: false}});
-  // mainWindow.setMenu(null);
+  mainWindow.setMenu(null);
   // mainWindow.setFullScreen(true);
 
   // and load the index.html of the app.

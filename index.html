@@ -17,10 +17,13 @@
 <div id="container">
 
 
+	<div>
+		<span id="errorMsg"></span>
+	</div>
 	<!-- Tab links -->
 	<div class="tab">
 		<button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Camera')">Camera</button>
-		<button class="tablinks" onclick="openTab(event, 'Recording'); bacaFile();">Recording</button>
+		<button class="tablinks" onclick="openTab(event, 'Recording'); bacaFile();">Records</button>
 	</div>
 	
 	<!-- Tab content -->
@@ -34,12 +37,7 @@
 	<div id="Recording" class="tabcontent">
 		<video id="playback" controls></video>
 		<button id="hapusvideo" onclick="hapusVideoIni() " display="none">Delete<br>Record</button>
-		<ul id="recList">
-
-		</ul>
-	</div>
-	<div>
-		<span id="errorMsg"></span>
+		<ul id="recList"></ul>
 	</div>
 </div>
 
