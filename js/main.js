@@ -110,7 +110,6 @@ function handleSuccess(stream) {
 function ganti(filename) {
   rel_vid_url_sekarang = filename;
   var vid = document.getElementById("playback");
-  // vid.src = "recordings/rec05042020163636.webm";
   vid.src = filename;
   
   vid.style.display="block";
@@ -130,6 +129,7 @@ function bacaFile() {
   const { readdirSync } = require('fs');
   var PATH =  require('electron').remote.app.getAppPath()+"/recordings/";
   var listRec = readdirSync(PATH);
+  listRec = listRec.reverse();
   $("#playback").get(0).pause();
   hapusVideo.style.display="none";
 
@@ -208,3 +208,6 @@ function hapusFile(namafile) {
     console.error(err);
   }
 }
+
+
+

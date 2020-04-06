@@ -1,6 +1,7 @@
 .*
 !/.gitignore
 recordings/
+GlideScope-ITS-*
 
 # Compiled source #
 ###################

@@ -17,7 +17,7 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({frame:false, width: 800, height: 480, webPreferences: {nodeIntegration: true, webSecurity: false}});
-  mainWindow.setMenu(null);
+  // mainWindow.setMenu(null);
   // mainWindow.setFullScreen(true);
 
   // and load the index.html of the app.
@@ -34,11 +34,12 @@ app.on('ready', function() {
   mainWindow.webContents.session.on('will-download', (event, item, webContents) => {
     // Set the save path, making Electron not to prompt a save dialog.
     var currentdate = new Date(); 
-    var filename = "rec" + ('0' + currentdate.getDate()).slice(-2)
-                    + ('0' + (currentdate.getMonth()+1)).slice(-2)
-                    + currentdate.getFullYear()
-                    + currentdate.getHours()
-                    + currentdate.getMinutes()
+    var filename = "rec-"
+                    + currentdate.getFullYear()+"-"
+                    + ('0' + (currentdate.getMonth()+1)).slice(-2)+"-"
+                    + ('0' + currentdate.getDate()).slice(-2)+"_"
+                    + currentdate.getHours()+"-"
+                    + currentdate.getMinutes()+"-"
                     + currentdate.getSeconds()
                     + ".webm";
     console.log(app.getAppPath())

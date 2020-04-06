@@ -10,7 +10,7 @@
     padding-left: 2px;
     padding-right: 2px;
     width: 99px;
-    height: 48px;
+    height: 96px;
   }
   
   button:last-of-type {
@@ -101,7 +101,7 @@
 
 #record, #hapusvideo {
   position: absolute; /* Fixed/sticky position */
-  top: 400px; /* Place the button at the bottom of the page */
+  top: 340px; /* Place the button at the bottom of the page */
   left: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
 }
@@ -118,16 +118,17 @@ ul {
 li {
   position: relative;
   padding-left: 30px;
-  height: 50px;
-  line-height: 50px;
+  height: 64px;
+  line-height: 64px;
   margin: 5px;
   border: 1px solid #ccc;
-  width: 256px;
+  /* width: 256px; */
+  width: 614px;
   background: #f1f1f1; /* Old browsers */
   cursor: pointer;
   user-select: none;
-  font-family:georgia,garamond,serif;
-  font-size:14px;
+  /* font-family:georgia,garamond,serif; */
+  /* font-size:14px; */
 }
 
 
