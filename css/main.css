@@ -137,3 +137,23 @@ li:active {
   background: #eee;
   box-shadow: inset 0 1px 1px #666;
 }
+
+.recButton img {
+  position: absolute; /* Fixed/sticky position */
+  top: 340px; /* Place the button at the bottom of the page */
+  left: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  width: 96px;
+  height: 96px;
+  cursor: pointer;
+}
+
+.recStatus {
+  position: absolute; /* Fixed/sticky position */
+  top: 16px; /* Place the button at the bottom of the page */
+  left: 160px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  width: 96px;
+  height: 96px;
+  cursor: pointer;
+}

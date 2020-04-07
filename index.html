@@ -22,21 +22,24 @@
 	</div>
 	<!-- Tab links -->
 	<div class="tab">
-		<button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Camera')">Camera</button>
-		<button class="tablinks" onclick="openTab(event, 'Recording'); bacaFile();">Records</button>
+		<button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Camera')"><img src="icon/camera.png" height="28" style="vertical-align: middle"/>&nbsp &nbsp Camera</button>
+		<button class="tablinks" onclick="openTab(event, 'Recording'); bacaFile();"><img src="icon/folder.png" height="28" style="vertical-align: middle"/>&nbsp &nbsp Records</button>
 	</div>
 	
 	<!-- Tab content -->
 	<div id="Camera" class="tabcontent">
 		<video id="gum" playsinline autoplay muted></video>
 		<div>
-			<button id="record" disabled>Start Recording</button>
+			<button id="record" style="display:none" disabled>Start Recording</button>
+		</div>
+		<div class="recButton">
+			<img id = "recButtonImg" src='icon/rec.png' onclick='toggleRecord()'>
 		</div>
 	</div>
 	
 	<div id="Recording" class="tabcontent">
 		<video id="playback" controls></video>
-		<button id="hapusvideo" onclick="hapusVideoIni() " display="none">Delete<br>Record</button>
+		<button id="hapusvideo" onclick="hapusVideoIni() " style="display:none">Delete<br>Record</button>
 		<ul id="recList"></ul>
 	</div>
 </div>

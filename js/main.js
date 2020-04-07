@@ -1,7 +1,7 @@
 'use strict';
 
 let rel_vid_url_sekarang;
-
+let recording = false;
 /* globals MediaRecorder */
 
 const mediaSource = new MediaSource();
@@ -25,16 +25,33 @@ function downloadRec() {
   }, 100);
 }
 
+
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordButton = document.querySelector('button#record');
-recordButton.addEventListener('click', () => {
-  if (recordButton.textContent === 'Start Recording') {
+
+function toggleRecord() {
+  if (recording == false) {
     startRecording();
+    recording = true;
+    document.getElementById("recButtonImg").src = "icon/stop.png";
   } else {
     stopRecording();
+    recording = false;
     recordButton.textContent = 'Start Recording';
+    document.getElementById("recButtonImg").src = "icon/rec.png";
     downloadRec();
   }
+}
+
+recordButton.addEventListener('click', () => {
+  toggleRecord();
+  // if (recordButton.textContent === 'Start Recording') {
+  //   startRecording();
+  // } else {
+  //   stopRecording();
+  //   recordButton.textContent = 'Start Recording';
+  //   downloadRec();
+  // }
 });
 
 window.onload=init;
