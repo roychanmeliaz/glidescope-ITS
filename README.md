@@ -30,7 +30,7 @@ Untuk arsitektur dan OS yang sesuai dengan mesin yang sedang berjalan:
 Untuk **Raspberry Pi 3B** (atau komputer armv7l-linux lainnya):
 
     electron-packager . GlideScope-ITS --electron-version 8.2.0 --arch armv7l --platform linux
-Untuk **Raspberry Pi 4** (atau komputer armv64-linux lainnya):
+Untuk **Raspberry Pi 4** (atau komputer arm64-linux lainnya):
 
     electron-packager . GlideScope-ITS --electron-version 8.2.0 --arch arm64 --platform linux
 Output akan muncul pada folder **GlideScope-ITS-*{arsitektur}*-*{OS}*/** beserta binary yang bernama **GlideScope-ITS** yang bisa langsung dijalankan.
