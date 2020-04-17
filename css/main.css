@@ -10,7 +10,7 @@
     padding-left: 2px;
     padding-right: 2px;
     width: 99px;
-    height: 96px;
+    height: 78px;
   }
   
   button:last-of-type {
@@ -58,7 +58,8 @@
 .tab {
   float: left;
   border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
+  /* background-color: #f1f1f1; */
   /* background-color: #f3f3f3; */
   width: 20%;
   height: 480px;
@@ -123,7 +124,8 @@ li {
   margin: 5px;
   border: 1px solid #ccc;
   /* width: 256px; */
-  width: 614px;
+  width: 98%;
+  /* width: 614px; */
   background: #f1f1f1; /* Old browsers */
   cursor: pointer;
   user-select: none;
@@ -157,3 +159,26 @@ li:active {
   height: 96px;
   cursor: pointer;
 }
+
+
+
+.button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  /* padding: 20px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* margin: 4px 2px; */
+  cursor: pointer;
+  height: 96px;
+  border-radius: 4px;}
+
+.restart {
+  margin: 32px 32px;
+  background-color: #555555;
+}
+
+

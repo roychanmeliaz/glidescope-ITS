@@ -22,8 +22,9 @@
 	</div>
 	<!-- Tab links -->
 	<div class="tab">
-		<button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Camera')"><img src="icon/camera.png" height="28" style="vertical-align: middle"/>&nbsp &nbsp Camera</button>
-		<button class="tablinks" onclick="openTab(event, 'Recording'); bacaFile();"><img src="icon/folder.png" height="28" style="vertical-align: middle"/>&nbsp &nbsp Records</button>
+		<button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Camera')"><img src="icon/camold.png" height="24" style="vertical-align: middle"/>&nbsp &nbsp Camera</button>
+		<button class="tablinks" onclick="openTab(event, 'Recording'); bacaFile();"><img src="icon/folder.png" height="24" style="vertical-align: middle"/>&nbsp &nbsp Records</button>
+		<button class="tablinks" onclick="openTab(event, 'Settings');"><img src="icon/settings.png" height="24" style="vertical-align: middle"/>&nbsp &nbsp Settings</button>
 	</div>
 	
 	<!-- Tab content -->
@@ -39,8 +40,13 @@
 	
 	<div id="Recording" class="tabcontent">
 		<video id="playback" controls></video>
-		<button id="hapusvideo" onclick="hapusVideoIni() " style="display:none">Delete<br>Record</button>
+		<button id="hapusvideo" class="button " onclick="hapusVideoIni() " style="display:none">Delete<br>Record</button>
 		<ul id="recList"></ul>
+	</div>
+
+	<div id="Settings" class="tabcontent">
+		<button class="button restart" onclick="location.reload(); return false;">Restart<br>app</button>
+		<button class="button restart" onclick="alert('test'); return false;" style="display:none">Delete all<br>records</button>
 	</div>
 </div>
 
